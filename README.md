@@ -45,4 +45,4 @@ ___
 
 ## Approach
 
-**The plateau** can be modelled using a matrix (Multi dimensional array).  
+**The plateau** can be modelled using a matrix (Multi dimensional array).
