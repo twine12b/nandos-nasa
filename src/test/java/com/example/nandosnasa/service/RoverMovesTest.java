@@ -1,5 +1,6 @@
 package com.example.nandosnasa.service;
 
+import com.example.nandosnasa.util.IllegalDirectionException;
 import com.example.nandosnasa.util.NoDirectionFoundException;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,11 +38,24 @@ public class RoverMovesTest {
     }
 
     @Test
-    public void whenRover_moves_outOfBounds() { //throws NoDirectionFoundException {
+    public void test_whenNoMoves_sentToRover_should_throw_NoDirectionFoundException() {
         Throwable exception = assertThrows(NoDirectionFoundException.class, () -> {
             roverMovesService.isValid("");
         });
         assertEquals("No Moves Found", exception.getMessage());
+    }
+
+    @Test
+    public void test_InvalidMove_should_throw_IllegalDirectionException() throws IllegalDirectionException {
+        Throwable exception = assertThrows(IllegalDirectionException.class, () -> {
+            roverMovesService.isValid("ZDP");
+        });
+        assertEquals("Illegal instruction", exception.getMessage());
+
+        exception = assertThrows(IllegalDirectionException.class, () -> {
+            roverMovesService.isValid("LMRy");
+        });
+        assertEquals("Illegal instruction", exception.getMessage());
     }
 
 }

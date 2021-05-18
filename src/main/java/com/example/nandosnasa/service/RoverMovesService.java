@@ -1,5 +1,6 @@
 package com.example.nandosnasa.service;
 
+import com.example.nandosnasa.util.IllegalDirectionException;
 import com.example.nandosnasa.util.NoDirectionFoundException;
 import org.jvnet.hk2.annotations.Service;
 
@@ -31,15 +32,16 @@ public class RoverMovesService {
         for (char c : moves.toCharArray()) {
             if (!(Pattern.compile("[LRM]").matcher("" + c).matches())) {  //needs a string not a char to match
                 valid = false;
+                throw new IllegalDirectionException("Illegal instruction");
             }
         }
 
         return valid;
     }
 
-//    public void testException(String m) throws NoDirectionFoundException {
-//        if(m.equals("L")) {
-//            throw new NoDirectionFoundException("Test works");
-//        }
-//    }
+    public void testException(String m) throws NoDirectionFoundException {
+        if (m.equals("L")) {
+            throw new NoDirectionFoundException("Test works");
+        }
+    }
 }
