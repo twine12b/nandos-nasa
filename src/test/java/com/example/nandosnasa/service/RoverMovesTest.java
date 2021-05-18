@@ -30,12 +30,12 @@ public class RoverMovesTest {
         assertThat(roverMovesService.isValid("RLMMLRM")).isTrue();
     }
 
-    @Test
-    public void test_invalid_roverMoves_shouldReturn_false() throws NoDirectionFoundException {
-        assertThat(roverMovesService.isValid("@LMM")).isFalse();
-        assertThat(roverMovesService.isValid("3M")).isFalse();
-        assertThat(roverMovesService.isValid("R9J")).isFalse();
-    }
+//    @Test
+//    public void test_invalid_roverMoves_shouldReturn_false() throws NoDirectionFoundException {
+//        assertThat(roverMovesService.isValid("@LMM")).isFalse();
+//        assertThat(roverMovesService.isValid("3M")).isFalse();
+//        assertThat(roverMovesService.isValid("R9J")).isFalse();
+//    }
 
     @Test
     public void test_whenNoMoves_sentToRover_should_throw_NoDirectionFoundException() {

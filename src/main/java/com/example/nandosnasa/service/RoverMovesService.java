@@ -12,12 +12,13 @@ public class RoverMovesService {
     //Default constructor
     public RoverMovesService() {
     }
-
+    
     /**
      * Checks that the Move param only contains [L, R, M]
      *
      * @param moves
      * @return
+     * @throws NoDirectionFoundException
      */
     public Boolean isValid(String moves) throws NoDirectionFoundException {
         boolean valid = true;
@@ -37,11 +38,5 @@ public class RoverMovesService {
         }
 
         return valid;
-    }
-
-    public void testException(String m) throws NoDirectionFoundException {
-        if (m.equals("L")) {
-            throw new NoDirectionFoundException("Test works");
-        }
     }
 }
