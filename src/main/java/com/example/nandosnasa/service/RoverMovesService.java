@@ -1,5 +1,6 @@
 package com.example.nandosnasa.service;
 
+import com.example.nandosnasa.util.NoDirectionFoundException;
 import org.jvnet.hk2.annotations.Service;
 
 import java.util.regex.Pattern;
@@ -17,10 +18,16 @@ public class RoverMovesService {
      * @param moves
      * @return
      */
-    public Boolean isValid(String moves) {
+    public Boolean isValid(String moves) throws NoDirectionFoundException {
         boolean valid = true;
         moves = moves.toUpperCase();  // fixes bug with case sensitivity
 
+        // Validate no rover moves
+        if (moves.isEmpty()) {
+            throw new NoDirectionFoundException("No Moves Found");
+        }
+
+        // Validates only LRM characters as input
         for (char c : moves.toCharArray()) {
             if (!(Pattern.compile("[LRM]").matcher("" + c).matches())) {  //needs a string not a char to match
                 valid = false;
@@ -29,4 +36,10 @@ public class RoverMovesService {
 
         return valid;
     }
+
+//    public void testException(String m) throws NoDirectionFoundException {
+//        if(m.equals("L")) {
+//            throw new NoDirectionFoundException("Test works");
+//        }
+//    }
 }
