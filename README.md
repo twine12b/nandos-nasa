@@ -45,4 +45,34 @@ ___
 
 ## Approach
 
-**The plateau** can be modelled using a matrix (Multi dimensional array).
+Entities
+> #### Moves
+>A valid set of moves is a string that only contains `[L, R, M]`
+> an `illegalDirectionException` is thrown if any other character is found in the moves string.
+> If no moves are given a `NoDirectionsFoundException` is thrown.
+> `PlateauBoundaryException`
+
+#### RoverPosition
+
+> A `RoverPosition` contains co-ordinates that must be within a `plateau`. If the co-ordinates
+> of a rover are out-side of the `plateau` then a `IllegalPositionException` is thrown. A rover faces in a single
+> 'direction'. A direction is either North(N), East(E), South(S) or West(W). If a direction is indicated other
+> than `N, E, S, W` then throw `IllegalDirectionException`.
+
+#### RoverRoute
+
+> A `RoverRoute` contains a `RoverPosition` and a set of `Moves`.
+
+#### RoverInstruction
+
+> A `RoverInstruction` has the size of a `plateau` and a list of `RoverRoute`. If the plateau size is not larger than
+> (1, 1), then an `IllegalPlateauException` is thrown. If the list of `RoverRoute` is empty then an  `NoRoutingException`
+> is thrown.
+
+___
+
+## Logic
+
+Psuedo code and algorithms
+
+
