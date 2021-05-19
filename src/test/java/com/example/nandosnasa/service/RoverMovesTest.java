@@ -46,7 +46,7 @@ public class RoverMovesTest {
     }
 
     @Test
-    public void test_InvalidMove_should_throw_IllegalDirectionException() throws IllegalDirectionException {
+    public void test_invalidMove_should_throw_IllegalDirectionException() throws IllegalDirectionException {
         Throwable exception = assertThrows(IllegalDirectionException.class, () -> {
             roverMovesService.isValid("ZDP");
         });
