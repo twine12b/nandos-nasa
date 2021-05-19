@@ -1,3 +1,9 @@
+/**
+ * @Author Richard Renaud
+ * <p>
+ * This service contains all the methods that are responsible for making
+ * sure the rover navigation instructions are legitimate.
+ */
 package com.example.nandosnasa.service;
 
 import com.example.nandosnasa.util.IllegalDirectionException;
@@ -12,7 +18,7 @@ public class RoverMovesService {
     //Default constructor
     public RoverMovesService() {
     }
-    
+
     /**
      * Checks that the Move param only contains [L, R, M]
      *

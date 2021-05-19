@@ -27,7 +27,7 @@ public class RoverMovesTest {
     public void test_valid_roverMoves_shouldReturn_true() throws NoDirectionFoundException {
         assertThat(roverMovesService.isValid("LMLMLMLMM")).isTrue();
         assertThat(roverMovesService.isValid("RMRMRMM")).isTrue();
-        assertThat(roverMovesService.isValid("RLMMLRM")).isTrue();
+        assertThat(roverMovesService.isValid("RlMmLrM")).isTrue();
     }
 
 //    @Test
