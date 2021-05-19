@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
 @RunWith(MockitoJUnitRunner.class)
-public class RoverMovesTest {
+public class RoverMovesServiceTest {
 
     @Mock
     private RoverMovesService roverMovesService;

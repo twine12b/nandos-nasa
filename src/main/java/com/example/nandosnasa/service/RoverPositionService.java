@@ -11,6 +11,15 @@ public class RoverPositionService {
     public RoverPositionService() {
     }
 
+    /**
+     * Returns true if test conditions are valid else throw meaningful exceptions
+     *
+     * @param plateauX
+     * @param plateauY
+     * @param roverPos
+     * @return
+     * @throws ILLegalPositionException
+     */
     public boolean isValid(int plateauX, int plateauY, RoverPos roverPos) throws ILLegalPositionException {
         boolean valid = true;
 
