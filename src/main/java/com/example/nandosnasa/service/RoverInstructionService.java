@@ -131,4 +131,77 @@ public class RoverInstructionService {
 
         return dir;
     }
+
+    public RoverPos getNewPosition(RoverRoute route) {
+        int startX = route.getRoverPosition().getXCord();
+        int startY = route.getRoverPosition().getYCord();
+        RoverDirection dir = route.getRoverPosition().getDirection();
+
+        //TODO - validate navigation
+
+        for (char n : route.getNavigation()) {
+
+            switch (n) {
+                case 'L':
+                    if (dir == RoverDirection.N) {
+                        dir = RoverDirection.W;
+                        break;
+                    }
+                    if (dir == RoverDirection.E) {
+                        dir = RoverDirection.N;
+                        break;
+                    }
+                    if (dir == RoverDirection.S) {
+                        dir = RoverDirection.E;
+                        break;
+                    }
+                    if (dir == RoverDirection.W) {
+                        dir = RoverDirection.S;
+                        break;
+                    }
+                    break;
+                case 'R':
+                    if (dir == RoverDirection.N) {
+                        dir = RoverDirection.E;
+                        break;
+                    }
+                    if (dir == RoverDirection.E) {
+                        dir = RoverDirection.S;
+                        break;
+                    }
+                    if (dir == RoverDirection.S) {
+                        dir = RoverDirection.W;
+                        break;
+                    }
+                    if (dir == RoverDirection.W) {
+                        dir = RoverDirection.N;
+                        break;
+                    }
+                    break;
+                case 'M':
+                    if (dir == RoverDirection.N) {
+                        startY += 1;
+                        break;
+                    }
+                    if (dir == RoverDirection.E) {
+                        startX += 1;
+                        break;
+                    }
+                    if (dir == RoverDirection.S) {
+                        startY -= 1;
+                        break;
+                    }
+                    if (dir == RoverDirection.W) {
+                        startX -= 1;
+                        break;
+                    }
+                    break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + n);
+            }
+        }
+        return new RoverPos(startX, startY, dir);
+    }
+
+    
 }

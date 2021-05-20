@@ -49,7 +49,6 @@ public class RoverInstructionServiceTest {
 
     @Test
     public void test_createRoverInstructionFromString_shouldReturn_RoverInstruction() throws IllegalArgumentException {
-        System.out.println(input1);
         RoverInstruction iBuilder = roverInstructionService.makeRoverInstructionFromString(input1);
 
         assertThat(iBuilder.getPlateauX()).isEqualTo(5);
@@ -61,13 +60,23 @@ public class RoverInstructionServiceTest {
 
     }
 
+    // Test moves calculator
+    @Test
+    public void test_roverMovesCalculator_shouldReturn_roverPosition() throws Exception {
+        RoverInstruction iBuilder = roverInstructionService.makeRoverInstructionFromString(input1);
+        RoverPos newPos = roverInstructionService.getNewPosition(iBuilder.getRoverRouteList().get(0));
+        RoverPos newPos1 = roverInstructionService.getNewPosition(iBuilder.getRoverRouteList().get(1));
+
+        assertThat(newPos).isEqualTo(new RoverPos(1, 3, RoverDirection.N));
+        assertThat(newPos1).isEqualTo(new RoverPos(5, 1, RoverDirection.E));
+
+    }
+
 // test plateau not < 0  or  Null
 
     //Test roverstart pos
 
     //Test rover moves  - [use raw data NOT OBJECTS]
-
-    // Test moves calculator
 
     // test rover end Pos (same as start pos)
 
