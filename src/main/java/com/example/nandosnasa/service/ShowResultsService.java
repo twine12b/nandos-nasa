@@ -28,7 +28,7 @@ public class ShowResultsService {
         ri.setRoverRouteList(getEndPosition(ri));
 
         //vaidate end positions
-        validateRoverPosition(ri);
+        validateEndPosition(ri);
 
         // creates output string
         String tt = formatResults(ri).toString();
@@ -36,6 +36,15 @@ public class ShowResultsService {
 
 
         return formatResults(ri).toString();
+    }
+
+    private void validateEndPosition(RoverInstruction ri) {
+        for (RoverRoute route : ri.getRoverRouteList()) {
+            roverPositionService.isValid(
+                    ri.getPlateauX(), ri.getPlateauY(),
+                    route.getRoverPosition()
+            );
+        }
     }
 
     private StringBuilder formatResults(RoverInstruction ri) {
