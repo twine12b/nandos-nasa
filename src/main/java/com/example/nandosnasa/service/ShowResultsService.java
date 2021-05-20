@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 @Service
 public class ShowResultsService {
@@ -16,6 +17,7 @@ public class ShowResultsService {
     private final RoverRouteService roverRouteService = new RoverRouteService();
 
     public String getResults(String input) {
+        input = input.toUpperCase(Locale.ROOT);
         RoverInstruction ri = roverInstructionService.makeRoverInstructionFromString(input);
 
         // Validate start positions

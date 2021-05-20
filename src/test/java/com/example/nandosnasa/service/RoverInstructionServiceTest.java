@@ -26,27 +26,16 @@ public class RoverInstructionServiceTest {
 
     @Before
     public void setUp() throws Exception {
-//        roverInstructionService = mock(RoverInstructionService.class);
 
         roverInstructionService = new RoverInstructionService();
-        //##############################################
-
-//        char[] tst = {'L','M','L','M','L','M','L','M','M'};
-//        RoverPos rPos1 = new RoverPos(1, 2, RoverDirection.N);
-//        RoverRoute rRoute1 = new RoverRoute(rPos1, "MMRMMRMRRM".toCharArray());
-//        roverRouteList.add(rRoute1);
-
-        //##############################################
-
 
         roverRouteList.add(new RoverRoute(new RoverPos(1, 2, RoverDirection.N), "LMLMLMLMM".toCharArray()));
         roverRouteList.add(new RoverRoute(new RoverPos(3, 3, RoverDirection.E), "MMRMMRMRRM".toCharArray()));
-//
+
         instructionList.add(new RoverInstruction(5, 5, roverRouteList));
 
         input1 = "5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMMRMMRMRRM";
         result_In1 = "1 2 N\n3 3 E\n";
-
     }
 
     @Test
@@ -62,7 +51,6 @@ public class RoverInstructionServiceTest {
 
     }
 
-    // Test moves calculator
     @Test
     public void test_roverMovesCalculator_shouldReturn_roverPosition() throws Exception {
         RoverInstruction iBuilder = roverInstructionService.makeRoverInstructionFromString(input1);
@@ -73,29 +61,4 @@ public class RoverInstructionServiceTest {
         assertThat(newPos1).isEqualTo(new RoverPos(5, 1, RoverDirection.E));
 
     }
-
-
-// test plateau not < 0  or  Null
-
-    //Test roverstart pos
-
-    //Test rover moves  - [use raw data NOT OBJECTS]
-
-    // test rover end Pos (same as start pos)
-
-    //Test new position after successful move
-
-    // Test Exceptions
-
-
-    //TODO - update README.md with assumptions
-    //TODO - update README.md with instructions
-
-
 }
-
-
-/**
- * @Test public void test_roverRouteIsValid_shouldReturn_boolean()
- * throws NoDirectionFoundException, IllegalDirectionException,
- */

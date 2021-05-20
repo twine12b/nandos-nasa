@@ -26,7 +26,7 @@ public class RoverPositionServiceTest {
     private RoverPositionService roverPositionService;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         roverPositionService = new RoverPositionService();
     }
 
@@ -37,9 +37,6 @@ public class RoverPositionServiceTest {
 
         assertThat(roverPositionService.isValid(plateauX, plateauY, roverPos1)).isTrue();
         assertThat(roverPositionService.isValid(plateauX, plateauY, roverPos2)).isTrue();
-
-//        assertThat(roverPositionService.isValid(plateauX, plateauY, errorPos1)).isFalse();
-//        assertThat(roverPositionService.isValid(plateauX, plateauY, errorPos2)).isFalse();
     }
 
     @Test

@@ -73,6 +73,41 @@ ___
 
 ## Logic
 
-Psuedo code and algorithms
+```
+The 'plateau' grid position can be calculated using the rovers direction.
+       * North facing - y +1
+       * South facing - y -1
+       * East facing  - x +1
+       * West facing  - x -1 
+```
 
+#### Assumptions/Validation
+
+```
+Assumptiions are made as they are not implicitly specified in the task.
+
+    * A plateau size of less than 1 x 1 (Whoops forgot to code this - but it was a consideration)
+    * A rover position outside of plateau throws ILLegalPositionException
+    * A command other than [L,R,M] throws IllegalDirectionException
+    * No directional commands throws NoDirectionFoundException
+
+If legal command strings are received which move the rover beyond the boundary of 
+a plateau.  The rover remains in its original position and an exception is thrown.
+
+The 'ShowResultsSerrvice' is not exposed via an EndPoint as this is outside of the scope of 
+this task. n.b.[a Rest API could easily be created within the SprinBoot project if required.]
+```
+
+#### instructions
+
+```
+Unit tests have beed created for all the services used in this project.  
+
+  - To run: use the 'ShowResultsServiceTest'
+  - To test with your own input string use: ShowResultsService.getResults(YOUR-INPUT-HERE)
+
+Expected Output will be displayed in the (console) or returned as a (String).
+```
+
+### Thank You for the opportunity
 
