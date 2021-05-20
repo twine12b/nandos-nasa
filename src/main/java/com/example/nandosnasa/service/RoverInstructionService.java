@@ -132,12 +132,16 @@ public class RoverInstructionService {
         return dir;
     }
 
+    /**
+     * Calculates new rover position after navigating
+     *
+     * @param route
+     * @return
+     */
     public RoverPos getNewPosition(RoverRoute route) {
         int startX = route.getRoverPosition().getXCord();
         int startY = route.getRoverPosition().getYCord();
         RoverDirection dir = route.getRoverPosition().getDirection();
-
-        //TODO - validate navigation
 
         for (char n : route.getNavigation()) {
 
@@ -203,5 +207,4 @@ public class RoverInstructionService {
         return new RoverPos(startX, startY, dir);
     }
 
-    
 }

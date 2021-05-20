@@ -8,7 +8,7 @@ package com.example.nandosnasa.service;
 
 import com.example.nandosnasa.util.exception.IllegalDirectionException;
 import com.example.nandosnasa.util.exception.NoDirectionFoundException;
-import org.jvnet.hk2.annotations.Service;
+import org.springframework.stereotype.Service;
 
 import java.util.regex.Pattern;
 

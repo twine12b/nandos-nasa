@@ -22,6 +22,7 @@ public class RoverInstructionServiceTest {
     private final List<RoverRoute> roverRouteList = new ArrayList<RoverRoute>();
     private RoverInstructionService roverInstructionService;
     private String input1;
+    private String result_In1;
 
     @Before
     public void setUp() throws Exception {
@@ -44,6 +45,7 @@ public class RoverInstructionServiceTest {
         instructionList.add(new RoverInstruction(5, 5, roverRouteList));
 
         input1 = "5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMMRMMRMRRM";
+        result_In1 = "1 2 N\n3 3 E\n";
 
     }
 
@@ -72,6 +74,7 @@ public class RoverInstructionServiceTest {
 
     }
 
+
 // test plateau not < 0  or  Null
 
     //Test roverstart pos
@@ -84,7 +87,6 @@ public class RoverInstructionServiceTest {
 
     // Test Exceptions
 
-    // Test random instruction input
 
     //TODO - update README.md with assumptions
     //TODO - update README.md with instructions
