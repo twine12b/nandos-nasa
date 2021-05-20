@@ -1,7 +1,7 @@
 package com.example.nandosnasa.service;
 
 import com.example.nandosnasa.entity.RoverPos;
-import com.example.nandosnasa.util.ILLegalPositionException;
+import com.example.nandosnasa.util.exception.ILLegalPositionException;
 import org.jvnet.hk2.annotations.Service;
 
 @Service

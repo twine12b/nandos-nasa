@@ -3,7 +3,7 @@
  * <p>
  * If rover receives no moves, throw NoDirectionFoundException.
  */
-package com.example.nandosnasa.util;
+package com.example.nandosnasa.util.exception;
 
 public class NoDirectionFoundException extends RuntimeException {
 

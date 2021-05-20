@@ -3,7 +3,7 @@
  * <p>
  * If rover receives an instruction which is not [L, R, M] throw IllegalDirectionException.
  */
-package com.example.nandosnasa.util;
+package com.example.nandosnasa.util.exception;
 
 public class IllegalDirectionException extends RuntimeException {
 

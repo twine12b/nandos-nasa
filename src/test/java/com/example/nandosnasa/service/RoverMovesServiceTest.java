@@ -1,7 +1,7 @@
 package com.example.nandosnasa.service;
 
-import com.example.nandosnasa.util.IllegalDirectionException;
-import com.example.nandosnasa.util.NoDirectionFoundException;
+import com.example.nandosnasa.util.exception.IllegalDirectionException;
+import com.example.nandosnasa.util.exception.NoDirectionFoundException;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

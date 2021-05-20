@@ -1,4 +1,4 @@
-package com.example.nandosnasa.util;
+package com.example.nandosnasa.util.exception;
 
 public class ILLegalPositionException extends RuntimeException {
 

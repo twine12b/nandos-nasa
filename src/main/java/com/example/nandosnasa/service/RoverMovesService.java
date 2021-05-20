@@ -6,8 +6,8 @@
  */
 package com.example.nandosnasa.service;
 
-import com.example.nandosnasa.util.IllegalDirectionException;
-import com.example.nandosnasa.util.NoDirectionFoundException;
+import com.example.nandosnasa.util.exception.IllegalDirectionException;
+import com.example.nandosnasa.util.exception.NoDirectionFoundException;
 import org.jvnet.hk2.annotations.Service;
 
 import java.util.regex.Pattern;

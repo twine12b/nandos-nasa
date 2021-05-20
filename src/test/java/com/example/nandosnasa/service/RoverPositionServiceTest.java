@@ -2,7 +2,7 @@ package com.example.nandosnasa.service;
 
 import com.example.nandosnasa.entity.RoverDirection;
 import com.example.nandosnasa.entity.RoverPos;
-import com.example.nandosnasa.util.ILLegalPositionException;
+import com.example.nandosnasa.util.exception.ILLegalPositionException;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

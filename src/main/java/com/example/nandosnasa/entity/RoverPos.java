@@ -8,20 +8,13 @@ package com.example.nandosnasa.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-@Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
 public class RoverPos {
-    @Id
-    @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
-    private Long id;
+
     private int xCord;
     private int yCord;
     private RoverDirection direction;
